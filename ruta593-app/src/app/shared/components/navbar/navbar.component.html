@@ -1,0 +1,69 @@
+<nav class="navbar">
+  <div class="logo">
+    <img src="assets/images/ruta.png" />
+  </div>
+
+  <ul class="nav-links">
+    <li><a routerLink="/"><i class="fas fa-house"></i> Inicio</a></li>
+    <li><a routerLink="/boletos"><i class="fas fa-ticket"></i> Boletos</a></li>
+    <li><a routerLink="/ofertas"><i class="fas fa-star"></i> Ofertas</a></li>
+    <li><a routerLink="/ayuda"><i class="fas fa-circle-question"></i> Ayuda</a></li>
+    <li>
+      <a (click)="isLoggedIn() ? logout() : toggleAuthModal()">
+        <i class="fas fa-user"></i>
+        {{ isLoggedIn() ? 'Cerrar Sesión' : 'Mi Perfil' }}
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- Modal de Autenticación -->
+<div class="auth-modal" *ngIf="showAuthModal">
+  <div class="modal-content">
+    <button class="close-button" (click)="toggleAuthModal()">×</button>
+    
+    <div class="auth-tabs">
+      <button [class.active]="isLoginMode" (click)="isLoginMode = true">Iniciar Sesión</button>
+      <button [class.active]="!isLoginMode" (click)="isLoginMode = false">Registrarse</button>
+    </div>
+
+    <!-- Formulario de Login -->
+    <form *ngIf="isLoginMode" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" formControlName="email">
+      </div>
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" formControlName="password">
+      </div>
+      <button type="submit" [disabled]="!loginForm.valid">Iniciar Sesión</button>
+    </form>
+
+    <!-- Formulario de Registro -->
+    <form *ngIf="!isLoginMode" [formGroup]="registerForm" (ngSubmit)="onRegister()">
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" formControlName="nombre">
+      </div>
+      <div class="form-group">
+        <label>Apellido</label>
+        <input type="text" formControlName="apellido">
+      </div>
+      <div class="form-group">
+        <label>Teléfono</label>
+        <input type="text" formControlName="telefono">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" formControlName="email">
+      </div>
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" formControlName="password">
+      </div>
+      <button type="submit" [disabled]="!registerForm.valid">Registrarse</button>
+    </form>
+  </div>
+</div>
+  

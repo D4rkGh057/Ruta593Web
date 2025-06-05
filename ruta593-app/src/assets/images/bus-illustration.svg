@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="300" viewBox="0 0 500 300" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- Bus body -->
+        <rect fill="#28405A" x="50" y="100" width="400" height="120" rx="20"/>
+        <!-- Windows -->
+        <rect fill="#FFFFFF" opacity="0.9" x="80" y="120" width="50" height="40" rx="5"/>
+        <rect fill="#FFFFFF" opacity="0.9" x="140" y="120" width="50" height="40" rx="5"/>
+        <rect fill="#FFFFFF" opacity="0.9" x="200" y="120" width="50" height="40" rx="5"/>
+        <rect fill="#FFFFFF" opacity="0.9" x="260" y="120" width="50" height="40" rx="5"/>
+        <rect fill="#FFFFFF" opacity="0.9" x="320" y="120" width="50" height="40" rx="5"/>
+        <!-- Wheels -->
+        <circle fill="#333333" cx="120" cy="220" r="30"/>
+        <circle fill="#333333" cx="380" cy="220" r="30"/>
+        <circle fill="#FFFFFF" cx="120" cy="220" r="10"/>
+        <circle fill="#FFFFFF" cx="380" cy="220" r="10"/>
+        <!-- Details -->
+        <rect fill="#FFD700" x="50" y="180" width="400" height="10"/>
+        <path d="M450,160 L470,140 L470,180 L450,160" fill="#28405A"/>
+    </g>
+</svg> 
