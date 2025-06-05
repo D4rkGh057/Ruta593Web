@@ -21,6 +21,9 @@ import { Component } from '@angular/core';
           <a class="contact-button whatsapp" href="https://wa.me/593992990885" target="_blank" aria-label="Contactar por WhatsApp">
             <i class="fab fa-whatsapp"></i> WhatsApp
           </a>
+          <a class="contact-button email" href="mailto:soporte@ruta593.com" aria-label="Enviar correo a soporte">
+            <i class="fas fa-envelope"></i> Correo
+          </a>
         </div>
 
         <div class="ayuda-extra">
