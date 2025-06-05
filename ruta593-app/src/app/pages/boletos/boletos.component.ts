@@ -64,23 +64,25 @@ import { FormsModule } from '@angular/forms';
                 </div>
               </div>
             </div>
-            <div class="col-md-2">
-              <div class="form-group">
-                <label>Pasajeros</label>
-                <div class="input-group">
-                  <span class="input-group-text">
-                    <i class="fas fa-user-friends"></i>
-                  </span>
-                  <input type="number" class="form-control" min="1" max="10" [(ngModel)]="pasajeros" name="pasajeros" required>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12 mt-3 d-flex justify-content-end">
-              <button class="btn btn-primary" [disabled]="form.invalid || cargando">
-                <span *ngIf="!cargando"><i class="fas fa-search"></i> Buscar</span>
-                <span *ngIf="cargando" class="spinner-border spinner-border-sm"></span>
-              </button>
-            </div>
+            <div class="col-md-4 d-flex align-items-end gap-2">
+  <div class="form-group flex-grow-1">
+    <label>Pasajeros</label>
+    <div class="input-group">
+      <span class="input-group-text">
+        <i class="fas fa-user-friends"></i>
+      </span>
+      <input type="number" class="form-control" min="1" max="10" [(ngModel)]="pasajeros" name="pasajeros" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label style="visibility: hidden;">Buscar</label>
+    <button class="btn btn-primary w-100" [disabled]="form.invalid || cargando">
+      <span *ngIf="!cargando"><i class="fas fa-search"></i></span>
+      <span *ngIf="cargando" class="spinner-border spinner-border-sm"></span>
+    </button>
+  </div>
+</div>
+
           </div>
         </form>
         <div *ngIf="mensaje" class="alert mt-3" [ngClass]="mensajeTipo">{{ mensaje }}</div>
